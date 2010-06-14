@@ -14,7 +14,7 @@ Magnifier.Modes = {
 
 Magnifier.Instance = Class.create({
 	defaults: {
-		mode: Magnifier.Modes.MouseDrag
+		mode: Magnifier.Modes.MouseDrag,
 		magnifedContainerClass: 'magnified-container'
 	},
 	
