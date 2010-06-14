@@ -15,32 +15,49 @@
       border-style: none;
     }
     
-    .magnifier {
-      left: 100px;
-      position: relative;
-      top: 100px;
-    }
-    
     .magnified-container {
-      border: 5px solid #000;
       height: 150px;
       overflow: hidden;
       width: 150px;
+    }
+    
+    .magnifier img {
+      display: block;
+    }
+    
+    .test {
+      padding: 15px 75px;
     }
   </style>
 </head>
 
 <body>
-    <a class="magnifier" href="images/big.jpeg">
+  <div class="test">
+    <h2>Drag Mode</h2>
+    <p>Click to activate</p>
+    <a class="magnifier drag" href="images/big.jpeg">
       <img src="images/small.jpeg" />
     </a>
+    <h2>Zoom Mode</h2>
+    <p>Hover to activate</p>
+    <a class="magnifier zoom" href="images/big.jpeg">
+      <img src="images/small.jpeg" />
+    </a>
+    <h2>Pan Mode</h2>
+    <p>Click to activate</p>
+    <a class="magnifier pan" href="images/big.jpeg">
+      <img src="images/small.jpeg" />
+    </a>
+  </div>
   
-    <script type="text/javascript" charset="utf-8">
-        function runTest() {
-          new Magnifier('.magnifier');
-        }
+  <script type="text/javascript" charset="utf-8">
+      function runTest() {
+        new Magnifier('.magnifier.zoom', { mode: Magnifier.Modes.MouseZoom });
+        new Magnifier('.magnifier.drag', { mode: Magnifier.Modes.MouseDrag });
+        new Magnifier('.magnifier.pan', { mode: Magnifier.Modes.MousePan });
+      }
 
-        Event.observe(window, "load", runTest);
-    </script>
+      Event.observe(window, "load", runTest);
+  </script>
 </body>
 </html>
