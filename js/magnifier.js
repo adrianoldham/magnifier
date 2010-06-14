@@ -15,6 +15,7 @@ Magnifier.Modes = {
 Magnifier.Instance = Class.create({
 	defaults: {
 		mode: Magnifier.Modes.MouseDrag
+		magnifedContainerClass: 'magnified-container'
 	},
 	
 	initialize: function(element, options) {
@@ -58,7 +59,7 @@ Magnifier.Instance = Class.create({
 	
 	setupMagnifiedContainer: function() {
 		// Setup magnified container
-		this.magnifiedContainer = new Element('div', { 'class': 'magnified-container' });
+		this.magnifiedContainer = new Element('div', { 'class': this.options.magnifedContainerClass });
 		this.magnifiedContainer.insert(this.largeImage);
 		
 		// Make sure container is absolute positioned
