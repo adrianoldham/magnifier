@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+	<title>Magnifier Demo</title>
+  <script type="text/javascript" charset="utf-8" src="../lib/prototype.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../lib/scriptaculous.js?load=effects"></script>
+  <script type="text/javascript" charset="utf-8" src="../js/magnifier.js"></script>
+  
+  <style type="text/css" media="screen">
+    a img {
+      border-style: none;
+    }
+    
+    .magnifier {
+      left: 100px;
+      position: relative;
+      top: 100px;
+    }
+    
+    .magnified-container {
+      border: 5px solid #000;
+      height: 150px;
+      overflow: hidden;
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+    <a class="magnifier" href="images/big.jpeg">
+      <img src="images/small.jpeg" />
+    </a>
+  
+    <script type="text/javascript" charset="utf-8">
+        function runTest() {
+          new Magnifier('.magnifier');
+        }
+
+        Event.observe(window, "load", runTest);
+    </script>
+</body>
+</html>
