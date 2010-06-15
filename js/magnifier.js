@@ -261,7 +261,7 @@ Magnifier.Instance = Class.create({
 			if (this.effect) { this.effect.cancel(); }
 			this.effect = new Effect.Morph(this.largeImage, {
 				style: styles,
-				transition: Effect.Transitions.linear,
+				transition: Effect.Transitions.easeOutQuad,
 				duration: this.options.zoomSpeed
 			});
 		} else {
